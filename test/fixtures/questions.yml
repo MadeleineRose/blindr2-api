@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category_id: 
+  prompt: MyString
+  answer: MyString
+
+two:
+  category_id: 
+  prompt: MyString
+  answer: MyString

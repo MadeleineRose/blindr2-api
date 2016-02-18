@@ -1,8 +1,16 @@
-Rails.application.routes.draw do
-  resources :questions, except: [:new, :edit]
-  resources :categories, except: [:new, :edit]
-  resources :meets, except: [:new, :edit]
-  resources :users, except: [:new, :edit]
+
+
+  Rails.application.routes.draw do
+    namespace :api do
+      namespace :v1 do
+        resources :questions, except: [:new, :edit]
+        resources :categories, except: [:new, :edit]
+        resources :meets, except: [:new, :edit]
+        resources :users, except: [:new, :edit]
+      end
+    end
+end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -57,4 +65,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

@@ -1,5 +1,6 @@
 
 class Api::V1::UsersController< ApplicationController
+  skip_before_action :authenticate!
   def index
     render({json: User.all})
   end
@@ -15,6 +16,6 @@ class Api::V1::UsersController< ApplicationController
 
   private
   def user_params
-  params.require(:user).permit(:name, :email, :password_digest, :username, :age, :gender)
+  params.require(:user).permit(:name, :email, :password, :password_confirmation, :username, :age, :gender)
   end
 end

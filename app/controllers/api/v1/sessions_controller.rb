@@ -3,6 +3,7 @@ class Api::V1::SessionsController< ApplicationController
   skip_before_action :authenticate!
 
   def create
+    binding.pry
     user = User.authenticate(user_params)
     if user
       data = {

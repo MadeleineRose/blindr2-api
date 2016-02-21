@@ -7,12 +7,12 @@
         resources :categories, except: [:new, :edit]
         resources :meets, except: [:new, :edit]
         resources :users, except: [:new, :edit]
+        post "/users/sign_in", to: "sessions#create"
       end
     end
 
 
 
-post "/users/sign_in", to: "sessions#create"
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

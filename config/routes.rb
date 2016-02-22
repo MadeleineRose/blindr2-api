@@ -1,6 +1,9 @@
 
 
   Rails.application.routes.draw do
+
+    # devise_for :users, controllers: { sessions: 'sessions' }
+
     namespace :api do
       namespace :v1 do
         resources :questions, except: [:new, :edit]
@@ -8,6 +11,7 @@
         resources :meets, except: [:new, :edit]
         resources :users, except: [:new, :edit]
         post "/users/sign_in", to: "sessions#create"
+        get "users/me", to: "users#me"
       end
     end
 

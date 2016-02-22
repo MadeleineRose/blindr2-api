@@ -7,11 +7,12 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
-
+gem 'bootswatch-rails', :group => :assets
+gem 'sass-rails'
 gem 'pg'
 
 
-gem 'active_model_serializers'
+gem 'active_model_serializers', '~> 0.8.1'
 
 gem 'rack-cors', :require => 'rack/cors'
 

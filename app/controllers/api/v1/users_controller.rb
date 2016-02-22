@@ -1,16 +1,16 @@
 
 class Api::V1::UsersController< ApplicationController
   skip_before_action :authenticate!
+
   def index
-    render({json: User.all})
+    # render({json: current_user})
   end
 
   def show
-    render({json: User.find(params[:id])})
+    render({json: current_user})
   end
 
   def create
-    binding.pry
     user = User.create(user_params)
     render json: user
   end

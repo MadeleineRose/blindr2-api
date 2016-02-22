@@ -11,6 +11,7 @@ class Api::V1::SessionsController< ApplicationController
         email: user.email
       }
       render json: data, status: 201
+      # redirect_to url_for(:controller => :users, :action => :post)
     end
   end
 

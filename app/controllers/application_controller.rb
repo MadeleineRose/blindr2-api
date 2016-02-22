@@ -5,6 +5,17 @@ class ApplicationController < ActionController::API
   before_action :authenticate!
 
   private
+  def current_user
+       User.find_by(authentication_token: the_auth_token)
+    end
+
+    def the_auth_token
+     authenticate_with_http_token do |token, options|
+       return token
+     end
+   end
+
+
   def authenticate!
     authenticate_token || render_unauthorized
   end

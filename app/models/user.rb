@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 has_secure_password
+has_many :matches
  before_save :verify_authentication_token
 
  def self.authenticate(credentials)

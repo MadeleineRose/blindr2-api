@@ -3,6 +3,7 @@
   Rails.application.routes.draw do
 
 
+  resources :matches, except: [:new, :edit]
     namespace :api do
       namespace :v1 do
         resources :questions, except: [:new, :edit]

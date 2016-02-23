@@ -7,6 +7,7 @@ class Api::V1::UsersController< ApplicationController
   end
 
   def show
+    # binding.pry
     render({json: current_user})
   end
 

@@ -17,7 +17,7 @@ class ApplicationController < ActionController::API
 
 
   def authenticate!
-    binding.pry
+    # binding.pry
     authenticate_token || render_unauthorized
   end
 

@@ -1,15 +1,20 @@
 class Api::V1::MatchesController< ApplicationController
-skip_before_action :authenticate!,  only: [:create]
+# skip_before_action :authenticate!,  only: [:create]
+  
   def create
-    # {"answers"=>["A", "C", "C", "D", "A", "A"],
-    #  "controller"=>"api/v1/matches",
-    #  "action"=>"create"}
 
+  other_users=User.all.select {|user| user if user != current_user}
+  user_id = current_user.id
+  my_answers = params[:answers]
+  personality = my_answers.max_by{|answer| my_answers.count(answer)}
+  current_user.update(my_type: personality)
+    binding.pry
 
-    # Match.create(:user_id, :match_id)
+  people_like_me = other_users.select {|user| user if user.my_type == current_user.my_type}
+
   end
 
-
+  
 
 private
 def match_params

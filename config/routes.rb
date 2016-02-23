@@ -10,6 +10,7 @@
         resources :categories, except: [:new, :edit]
         resources :meets, except: [:new, :edit]
         resources :users, except: [:new, :edit]
+        post "/matches/create", to: "matches#create"
         post "/users/sign_in", to: "sessions#create"
       end
     end

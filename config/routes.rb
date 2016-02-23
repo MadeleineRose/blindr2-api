@@ -9,6 +9,7 @@
         resources :questions, except: [:new, :edit]
         resources :categories, except: [:new, :edit]
         resources :meets, except: [:new, :edit]
+        get "users/me", to: "users#me"
         resources :users, except: [:new, :edit]
         post "/matches/create", to: "matches#create"
         post "/users/sign_in", to: "sessions#create"

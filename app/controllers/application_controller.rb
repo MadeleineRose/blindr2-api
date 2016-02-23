@@ -6,8 +6,8 @@ class ApplicationController < ActionController::API
 
   private
   def current_user
-       User.find_by(authentication_token: the_auth_token)
-    end
+     User.find_by(authentication_token: the_auth_token)
+  end
 
     def the_auth_token
      authenticate_with_http_token do |token, options|
@@ -17,7 +17,6 @@ class ApplicationController < ActionController::API
 
 
   def authenticate!
-    # binding.pry
     authenticate_token || render_unauthorized
   end
 
